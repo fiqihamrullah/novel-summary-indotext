@@ -38,7 +38,7 @@ public class FormTextSummary extends javax.swing.JFrame
         Util.TengahWindow(this);
         setResizable(false);
         summerizedarticle = null;
-        setTitle("Peringkasan Teks dengan Metode MMR");
+        setTitle("Automatic Summarization Using MMR Method");
     }
     
     private int openDialogFile() 
@@ -92,13 +92,13 @@ public class FormTextSummary extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PERINGKASAN OTOMATIS DENGAN METODE MMR");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 620, 40));
+        jLabel1.setText("Automatic Summarization Using MMR Method");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 860, 40));
 
-        jLabel2.setText("Isi:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jLabel2.setText("Content:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         jTxtIsi.setColumns(20);
         jTxtIsi.setLineWrap(true);
@@ -106,12 +106,12 @@ public class FormTextSummary extends javax.swing.JFrame
         jTxtIsi.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTxtIsi);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 360, 360));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 370, 360));
 
-        jLabel3.setText("Hasil Peringkasan:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, -1, -1));
+        jLabel3.setText("Summary Results");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
 
-        jbtnRingkas.setText("Ringkas");
+        jbtnRingkas.setText("Summarize");
         jbtnRingkas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnRingkasActionPerformed(evt);
@@ -125,7 +125,7 @@ public class FormTextSummary extends javax.swing.JFrame
                 jbtnBrowseArticleActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtnBrowseArticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 90, 40));
+        getContentPane().add(jbtnBrowseArticle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 90, 30));
 
         jLabel5.setText("Pra Process:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
@@ -138,18 +138,18 @@ public class FormTextSummary extends javax.swing.JFrame
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 370, 140));
 
-        jLabel4.setText("Judul :");
+        jLabel4.setText("Title : ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
 
-        jlblJudul.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true), 2));
-        getContentPane().add(jlblJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 790, 20));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 870, 10));
+        jlblJudul.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        getContentPane().add(jlblJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 810, 20));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 890, 10));
 
         jTxtHasilPraprocess.setColumns(20);
         jTxtHasilPraprocess.setRows(5);
         jScrollPane2.setViewportView(jTxtHasilPraprocess);
 
-        jTabbedPane1.addTab("Pecahan Kalimat", jScrollPane2);
+        jTabbedPane1.addTab("Splitted Sentences", jScrollPane2);
 
         jtxtLogTokenizing.setColumns(20);
         jtxtLogTokenizing.setRows(5);
@@ -173,16 +173,16 @@ public class FormTextSummary extends javax.swing.JFrame
 
         jlblStat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblStat.setText("-");
-        jlblStat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(-16777216,true)));
+        jlblStat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(jlblStat, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, 370, 30));
 
-        jbtnBandingManual.setText("Banding Manual >>");
+        jbtnBandingManual.setText("Manual Comparison");
         jbtnBandingManual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnBandingManualActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtnBandingManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(723, 313, 130, 30));
+        getContentPane().add(jbtnBandingManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 313, 170, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
